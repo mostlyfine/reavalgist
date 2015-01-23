@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta name='description' content='A framework for easily creating beautiful presentations using HTML'
+    meta name='author' content='@mostlyfine'
+    meta name='apple-mobile-web-app-capable' content='yes'
+    meta name='apple-mobile-web-app-status-bar-style' content='yes'
+    meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic'
+    link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+    link rel='stylesheet' href='/css/reveal.css'
+    link rel='stylesheet' href="/css/theme/#{params[:theme] || 'moon'}.css" id='theme'
+    link rel='stylesheet' href='/lib/css/zenburn.css'
+    title Reveagist
+    /[if lt IE 9]
+      script src='lib/js/html5shiv.js'
+  body
+    .reveal
+      .slides
+        section data-markdown='' data-separator="^---$" data-separator-vertical="^--$"
+          script type='text/template'
+            = @markdown
+
+    script src='/lib/js/head.min.js'
+    script src='/js/reveal.js'
+    javascript:
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+			Reveal.initialize({
+        autoSlide: Reveal.getQueryHash().auto || 0,
+        slideNumber: Reveal.getQueryHash().number || false,
+				controls: Reveal.getQueryHash().controls || true,
+				progress: Reveal.getQueryHash().progress || true,
+				history: Reveal.getQueryHash().history || false,
+        center: Reveal.getQueryHash().center || true,
+        overview: true,
+        transition: Reveal.getQueryHash().transition || 'slide',
+
+				dependencies: [
+					{ src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { marked.setOptions({gfm: true}); } },
+          { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/plugin/zoom-js/zoom.js', async: true },
+          { src: '/plugin/notes/notes.js', async: true },
+          { src: 'plugin/math/math.js', async: true }
+				]
+			});
+
