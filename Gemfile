@@ -5,3 +5,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'slim'
 gem 'oj'
+
+group :development do
+  gem 'heroku'
+end
