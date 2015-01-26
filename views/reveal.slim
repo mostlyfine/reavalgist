@@ -37,7 +37,7 @@ html
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 			Reveal.initialize({
@@ -54,9 +54,9 @@ html
 					{ src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { marked.setOptions({gfm: true}); } },
           { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: '/plugin/zoom-js/zoom.js', async: true },
           { src: '/plugin/notes/notes.js', async: true },
-          { src: 'plugin/math/math.js', async: true }
+          { src: '/plugin/math/math.js', async: true }
 				]
 			});
