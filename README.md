@@ -22,6 +22,14 @@ http://reveagist.herokuapp.com/slides/0088939f2326b07e9910
 http://reveagist.herokuapp.com/slides?url=https://raw.githubusercontent.com/mostlyfine/reveagist/master/README.md&number=1&auto=10000&transition=concave&theme=beige
 ```
 
+### bookmarklet
+on the http://gist.github.com.
+on the Markdown page.
+
+```javascript
+javascript:(function(){var u=location.href;if(u.indexOf('gist.github.com')>0){u=u.split('/')[4];}else{u='?url='+u};location.href='http://reveagist.herokuapp.com/slides/'+u;})()
+```
+
 ---
 
 ## DESCRIPTION
