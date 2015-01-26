@@ -8,12 +8,14 @@
 
 Reveagist - enables you to create beautiful interactive slide decks using Markdown for Gist.
 
+[https://reveagist.herokuapp.com/](https://reveagist.herokuapp.com/)
+
 ---
 
 ## SYNOPSIS
 
 ```
-http://reveagist.herokuapp.com/slides/111111
+http://reveagist.herokuapp.com/slides/0088939f2326b07e9910
 ```
 
 ```
